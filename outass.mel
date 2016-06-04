@@ -1,0 +1,12 @@
+//maya mel script
+
+//create list
+string $light[];
+
+//select all lights
+$light = `ls -lights`;
+select $light;
+pickWalk -d up;
+
+//output to ass file
+file -force -options "-asciiAss;-mask 4;-lightLinks 1;-shadowLinks 1" -typ "ASS Export" -pr -es "D:/WriteAss/lightdata.ass";
